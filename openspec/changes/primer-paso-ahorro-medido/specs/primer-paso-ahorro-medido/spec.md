@@ -18,6 +18,12 @@ El sistema SHALL recomendar una sola ecoinnovación como primer paso para cada n
 - **THEN** el sistema no la recomienda como primer paso
 - **AND** la sigue mostrando en el catálogo
 
+#### Scenario: Inversión MEDIA con presupuesto intermedio
+
+- **WHEN** una ecoinnovación tiene inversión MEDIA y el presupuesto del negocio es de S/ 1.200
+- **THEN** el sistema no la descarta, porque el presupuesto alcanza el piso del nivel MEDIA (S/ 501)
+- **AND** le asigna un puntaje de facilidad menor que a una ecoinnovación de inversión BAJA
+
 #### Scenario: Plan trabado
 
 - **WHEN** el negocio tiene un plan de una ecoinnovación en estado `delayed` o sin avance por más de 6 semanas

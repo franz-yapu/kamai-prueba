@@ -36,7 +36,7 @@ Para Inés recomienda: **Hornear por tandas y apagar el horno entre ellas.**
 
 1. **Filtros duros** (descartan):
    - Categoría distinta del objetivo de la persona (aquí: ENERGY).
-   - `investment` que no cabe en su presupuesto. Equivalencia acordada con el equipo (supuesto): BAJA ≤ S/ 500, MEDIA ≤ S/ 3.000, ALTA > S/ 3.000.
+   - `investment` que no cabe en su presupuesto. Equivalencia acordada con el equipo (supuesto): BAJA ≤ S/ 500, MEDIA ≤ S/ 3.000, ALTA > S/ 3.000. Como el catálogo solo guarda el nivel y no el monto, el filtro usa el **piso** del nivel: pasa si el presupuesto alcanza el monto mínimo del nivel (BAJA: S/ 0, MEDIA: S/ 501, ALTA: S/ 3.001). Ejemplo: con S/ 1.200, una MEDIA pasa el filtro y una ALTA no. La MEDIA que pasa igual queda penalizada en el factor de facilidad del puntaje.
    - `time` que no cabe en sus horas por semana. Supuesto: BAJA ≤ 2 h, MEDIA ≤ 5 h, ALTA > 5 h.
    - Ecoinnovaciones con un plan `delayed` o sin avance de más de 6 semanas **no se vuelven a recomendar como primer paso** (sí quedan visibles en el catálogo).
 2. **Puntaje** (0 a 100), con pesos en un archivo de configuración versionado:
@@ -160,7 +160,7 @@ Con la factura mensual dividida entre sus días basta. La desventaja: el resulta
 | `savings` | cambio% ≤ −umbral% | «Ahorraste entre S/ X y S/ Y este mes.» |
 | `increase` | cambio% ≥ +umbral% | «Tu consumo subió. Revisemos juntas qué cambió.» |
 
-Ejemplo de febrero con estas reglas: +1,7 % por día, menor que el umbral de 3 % → **sin cambio claro**, no «ahorraste S/ 117».
+Ejemplo de febrero con estas reglas: solo hay una factura antes (enero), así que el estado es **«todavía no podemos saberlo»** (`insufficient_data`). Aunque hubiera línea base, +1,7 % por día está por debajo del umbral de Inés (5,2 %), así que sería **sin cambio claro**. En ningún caso «ahorraste S/ 117».
 
 ### Qué ve Inés vs. qué ven los aliados
 

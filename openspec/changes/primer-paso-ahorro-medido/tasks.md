@@ -12,13 +12,13 @@
 ## 2. Motor de recomendación
 
 - [ ] 2.1 Archivo de reglas JSON versionado (pesos, equivalencias de inversión y tiempo)
-- [ ] 2.2 Filtros duros: categoría, presupuesto, horas, planes trabados
+- [ ] 2.2 Filtros duros: categoría, presupuesto (piso del nivel de inversión), horas, planes trabados
 - [ ] 2.3 Puntaje: mayor consumo, facilidad, finalización en negocios similares (n ≥ 3), diagnóstico
 - [ ] 2.4 Desempate por complejidad e inversión
 - [ ] 2.5 Guardar recomendación con `reasons[]` y `rulesVersion`
 - [ ] 2.6 Recalcular ante cambios de perfil, diagnóstico, factura o plan
 - [ ] 2.7 Endpoint `GET /recommendations/first-step`
-- [ ] 2.8 Pruebas con los datos de Inés: debe salir «Hornear por tandas»; aislamiento y calentador descartados
+- [ ] 2.8 Pruebas con los datos de Inés: debe salir «Hornear por tandas»; aislamiento y calentador descartados; una MEDIA con S/ 1.200 no se descarta
 
 ## 3. Explicación
 
